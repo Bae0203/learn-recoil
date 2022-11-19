@@ -56,6 +56,13 @@ function App() {
       >
         temp 이동
       </button>
+      <button
+        onClick={() => {
+          Navigate("/count");
+        }}
+      >
+        count 이동
+      </button>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import Temp from "./TempCel";
+import Count from "./Counter";
 import reportWebVitals from "./reportWebVitals";
 import { RecoilRoot } from "recoil";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -15,6 +16,7 @@ root.render(
         <Routes>
           <Route element={<App />} path={"/"} />
           <Route element={<Temp />} path={"/temp"} />
+          <Route element={<Count />} path={"/count"} />
         </Routes>
       </React.StrictMode>
     </BrowserRouter>
