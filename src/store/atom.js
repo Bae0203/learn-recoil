@@ -57,4 +57,23 @@ export const user = atom({
  * 수정을 해야되는 State면 atom으로 뽑아와야 한다.)
  *
  * selector 관련된 예제가 ts로 되있어서 selector는 다음에
+ * 예시를 뜯어 고쳐보자
  */
+const temp = atom({
+  key: "temp",
+  default: 32,
+});
+
+const tempCel = selector({
+  key: "tempCel",
+  //get에서 temp값을 가져와 - 32 * 5 / 9를 하고
+  get: ({ get }) => ((get(temp) - 32) * 5) / 9,
+  //set에서 set(변하고자 하는 atom 값, 변하게 할 값)을 이용하여
+  //set(temp, (newVal * 9) / 5 + 32)를 했다
+  // -> temp에 default값을 바꿈
+  set: ({ set }, newVal) => set(temp, (newVal * 9) / 5 + 32),
+});
+//tempC에서는 get에서 리턴된 값을 받도록 되있음
+//setTempC에선 selector 안 set에서 바꾸는 함수를 실행 해줌
+
+export { temp, tempCel };
