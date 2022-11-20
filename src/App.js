@@ -63,6 +63,13 @@ function App() {
       >
         count 이동
       </button>
+      <button
+        onClick={() => {
+          Navigate("/Calculator");
+        }}
+      >
+        계산기 이동
+      </button>
     </div>
   );
 }

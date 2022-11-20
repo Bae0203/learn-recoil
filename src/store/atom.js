@@ -76,4 +76,32 @@ const tempCel = selector({
 //tempC에서는 get에서 리턴된 값을 받도록 되있음
 //setTempC에선 selector 안 set에서 바꾸는 함수를 실행 해줌
 
-export { temp, tempCel };
+const ValA = atom({
+  key: "ValA",
+  default: 0,
+});
+
+const ValB = atom({
+  key: "ValB",
+  default: 0,
+});
+
+const CalPlus = selector({
+  key: "CalPlus",
+  get: ({ get }) => {
+    let a = Number(get(ValA)) + Number(get(ValB));
+    console.log(a);
+    return `A,B를 더한 값은${a}입니다.`;
+  },
+});
+
+const CalMin = selector({
+  key: "CalMin",
+  get: ({ get }) => {
+    let a = Number(get(ValA)) - Number(get(ValB));
+    console.log(a);
+    return `${a}`;
+  },
+});
+
+export { temp, tempCel, ValA, ValB, CalPlus, CalMin };
