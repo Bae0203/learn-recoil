@@ -10,6 +10,7 @@ const inputChange = (e, set) => {
 const Calculator = () => {
   const [valA, setValA] = useRecoilState(ValA);
   const [valB, setValB] = useRecoilState(ValB);
+  var [a] = 1; //비구조 할당
 
   const CalP = useRecoilValue(CalPlus);
   const CalM = useRecoilValue(CalMin);
